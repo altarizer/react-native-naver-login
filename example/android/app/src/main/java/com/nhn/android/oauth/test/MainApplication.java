@@ -3,7 +3,7 @@ package com.nhn.android.oauth.test;
 import android.app.Application;
 
 import com.facebook.react.ReactApplication;
-import cc.creamcookie.rn.naver.login.RNCNaverLoginPackage;
+import com.altariz.naverlogin.RNCNaverLoginPackage;
 import com.facebook.react.ReactNativeHost;
 import com.facebook.react.ReactPackage;
 import com.facebook.react.shell.MainReactPackage;
