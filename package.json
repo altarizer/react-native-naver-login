@@ -1,6 +1,6 @@
 
 {
-  "name": "react-native-ccs-naver-login",
+  "name": "@altariz/rn-naver-login",
   "version": "1.0.4",
   "description": "",
   "main": "index.js",

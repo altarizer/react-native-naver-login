@@ -1,3 +1,21 @@
+사용 편의를 위해서 trabricks-react/react-native-naver-login 에서 Fork한 프로젝트 
+
+
+## 시작하기
+
+`$ npm install @altariz/rn-naver-login --save`
+
+### 자동설치
+
+`$ react-native link @altariz/rn-naver-login`
+
+
+전 제작자분에게 감사한 마음을 가집시다!
+감사합니다!
+
+---
+----
+
 
 # NaverSDK For React Native  (네아로, 까페, 블로그, 캘린더)
 

@@ -1,5 +1,5 @@
 
-package cc.creamcookie.rn.naver.login;
+package com.altariz.naverlogin;
 
 import android.content.pm.ApplicationInfo;
 import android.content.pm.PackageManager;

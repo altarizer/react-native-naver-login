@@ -1,5 +1,5 @@
 
-package cc.creamcookie.rn.naver.login;
+package com.altariz.naverlogin;
 
 import java.util.Arrays;
 import java.util.Collections;
