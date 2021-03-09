@@ -27,6 +27,6 @@ target 'example' do
 
 	# Pods for example
 
-  pod 'react-native-ccs-naver-login', :path => '../node_modules/react-native-ccs-naver-login'
+  pod 'rn-naver-login', :path => '../node_modules/@altariz/rn-naver-login'
 
 end
