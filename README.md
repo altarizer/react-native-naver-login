@@ -1,38 +1,16 @@
-사용 편의를 위해서 trabricks-react/react-native-naver-login 에서 Fork한 프로젝트 
 
+[react-native-naver-login](https://github.com/trabricks-react/react-native-naver-login) 에서 Fork 후 변경된 프로젝트 
+`전 제작자분에게 감사한 마음을 가집시다!\n감사합니다!`
 
 ## 시작하기
 
+### 다운로드(인스톨)
 `$ npm install @altariz/rn-naver-login --save`
 
-### 자동설치
+### RN에 링크(자동설치)
 
 `$ react-native link @altariz/rn-naver-login`
 
-
-전 제작자분에게 감사한 마음을 가집시다!
-감사합니다!
-
----
-----
-
-
-# NaverSDK For React Native  (네아로, 까페, 블로그, 캘린더)
-
-![platforms](https://img.shields.io/badge/platforms-Android%20%7C%20iOS-brightgreen.svg?style=flat-square&colorB=191A17)
-[![npm](https://img.shields.io/npm/v/react-native-ccs-naver-login.svg?style=flat-square)](https://www.npmjs.com/package/react-native-ccs-naver-login)
-[![npm](https://img.shields.io/npm/dm/react-native-ccs-naver-login.svg?style=flat-square&colorB=007ec6)](https://www.npmjs.com/package/react-native-ccs-naver-login)
-[![github issues](https://img.shields.io/github/issues/creamcookie/react-native-naver-login.svg?style=flat-square)](https://github.com/creamcookie/react-native-naver-login/issues)
-[![github closed issues](https://img.shields.io/github/issues-closed/creamcookie/react-native-naver-login.svg?style=flat-square&colorB=44cc11)](https://github.com/creamcookie/react-native-naver-login/issues?q=is%3Aissue+is%3Aclosed)
-[![Issue Stats](https://img.shields.io/issuestats/i/github/creamcookie/react-native-naver-login.svg?style=flat-square&colorB=44cc11)](http://github.com/creamcookie/react-native-naver-login/issues)
-
-## 시작하기
-
-`$ npm install react-native-ccs-naver-login --save`
-
-### 자동설치
-
-`$ react-native link react-native-ccs-naver-login`
 
 
 ### 수동설치
@@ -40,23 +18,23 @@
 #### iOS
 
 1. In XCode, in the project navigator, right click `Libraries` ➜ `Add Files to [your project's name]`
-2. Go to `node_modules` ➜ `react-native-ccs-naver-login` and add `RNCNaverLogin.xcodeproj`
+2. Go to `node_modules` ➜ `rn-naver-login` and add `RNCNaverLogin.xcodeproj`
 3. In XCode, in the project navigator, select your project. Add `libRNCNaverLogin.a` to your project's `Build Phases` ➜ `Link Binary With Libraries`
 4. Run your project (`Cmd+R`)<
 
 #### Android
 
 1. Open up `android/app/src/main/java/[...]/MainActivity.java`
-  - Add `import cc.creamcookie.rn.naver.login.RNCNaverLoginPackage;` to the imports at the top of the file
+  - Add `import com.altariz.naverlogin.RNCNaverLoginPackage;` to the imports at the top of the file
   - Add `new RNCNaverLoginPackage()` to the list returned by the `getPackages()` method
 2. Append the following lines to `android/settings.gradle`:
   	```
-  	include ':react-native-ccs-naver-login'
-  	project(':react-native-ccs-naver-login').projectDir = new File(rootProject.projectDir, 	'../node_modules/react-native-ccs-naver-login/android')
+  	include ':rn-naver-login'
+  	project(':rn-naver-login').projectDir = new File(rootProject.projectDir, 	'../node_modules/rn-naver-login/android')
   	```
 3. Insert the following lines inside the dependencies block in `android/app/build.gradle`:
   	```
-      compile project(':react-native-ccs-naver-login')
+      compile project(':rn-naver-login')
   	```
     
 
@@ -81,7 +59,7 @@ pod 'yoga', :path => '../node_modules/react-native/ReactCommon/yoga'
 pod 'DoubleConversion', :podspec => '../node_modules/react-native/third-party-podspecs/DoubleConversion.podspec'
 pod 'glog', :podspec => '../node_modules/react-native/third-party-podspecs/glog.podspec'
 pod 'Folly', :podspec => '../node_modules/react-native/third-party-podspecs/Folly.podspec'
-pod 'react-native-ccs-naver-login', :path => '../node_modules/react-native-ccs-naver-login'
+pod 'rn-naver-login', :path => '../node_modules/rn-naver-login'
 ```
 
 #### Android
@@ -118,14 +96,10 @@ pod 'react-native-ccs-naver-login', :path => '../node_modules/react-native-ccs-n
 </application>
 ```
 
-사용방법은 
-https://github.com/creamcookie/react-native-naver-login
-안에 example프로젝트를 참고하시면됩니다.
-
 
 ## 기본 사용방법
 ```javascript
-import NaverLogin from 'react-native-ccs-naver-login';
+import NaverLogin from 'rn-naver-login';
 
 // TODO: 로그인처리 (이미 로그인되어있어도 창 강제로 띠웁니다)
 NaverLogin.login()
@@ -142,6 +116,27 @@ NaverLogin.logout();
 NaverLogin.getAccessToken()
   .then(res => {
     alert("Signed Successful\n" + res.accessToken);
+
+        const header = "Bearer " + res.accessToken; // Bearer 다음에 공백 추가
+        const _uri = "https://openapi.naver.com/v1/nid/me";
+
+        fetch(_uri, { 
+          method: 'get', 
+          headers: new Headers({
+            'Authorization': header,
+          }), 
+          body: '',
+        }) 
+        .then((response) => response.json())
+        .then((res) => {
+          console.log("res:"+JSON.stringify(res));
+        })
+        .catch((err) => {
+          console.log(`Get Profile Failed:${err.code} ${err.message}`);
+        });
+
+
+
   }).catch(e => {
     alert("Signed Failure");
   });

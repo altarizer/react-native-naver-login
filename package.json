@@ -1,17 +1,32 @@
 
 {
   "name": "@altariz/rn-naver-login",
-  "version": "1.1.1",
-  "description": "",
+  "version": "1.1.2",
+  "description": "Naver Login For RN",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [
-    "react-native"
+    "react-native",
+    "react native",
+    "RN",
+    "naver login",
+    "naver id login",
+    "네이버 로그인",
+    "네아로"
   ],
-  "author": "",
-  "license": "",
+  "license": "MIT",
+  "author": {
+    "name": "Kaim",
+    "email": "hslee2000@gmail.com"
+  },
+  "homepage": "https://github.com/altarizer/rn-naver-login#readme",
+  "bugs": {
+    "url": "https://github.com/altarizer/rn-naver-login/issues"
+  },
+  "dependencies": {
+  },
   "peerDependencies": {
     "react-native": "*"
 
