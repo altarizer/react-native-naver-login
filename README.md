@@ -1,6 +1,7 @@
 
-[react-native-naver-login](https://github.com/trabricks-react/react-native-naver-login) 에서 Fork 후 변경된 프로젝트 
-`전 제작자분에게 감사한 마음을 가집시다!  감사합니다!`
+[react-native-naver-login](https://github.com/trabricks-react/react-native-naver-login) 에서 Fork 후 변경된 프로젝트. 
+
+`전 제작자분에게 감사한 마음을 가집시다!<br>감사합니다!`
 
 ## 시작하기
 
